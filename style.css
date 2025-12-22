@@ -1,0 +1,102 @@
+:root {
+    --background-color: #1e1e2e;
+    --surface-color: #45475a;
+    --text-color: #cdd6f4;
+    --accent-color: #cba6f7;
+    --header-color: #fab387;
+    --sub-header-color: #f9e2af;
+    --important-color: #f38ba8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ubuntu-sans-mono-latin-wght-normal */
+@font-face {
+  font-family: 'Ubuntu Sans Mono Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/ubuntu-sans-mono:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+span.env-var {
+  color: orange;
+}
+
+#keyboard-picture {
+  max-width: 100%;
+}
+
+body {
+  color: white;
+  background-color: #181A1B;
+  font-family: 'Ubuntu Sans Mono Variable';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  margin: 2rem;
+}
+
+#profile-picture {
+  margin-top: 2rem;
+}
+
+#profile-picture > img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #08AA6E;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+a:hover {
+  color: white;
+  background-color: #08AA6E;
+}
+
+.intro {
+  margin-top: -0.5rem;
+}
+
+article {
+  margin: 0 1rem 2rem 1rem;
+  max-width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background-color: #0E1013;
+  border: 3px dashed #08AA6E;
+}
+
+article > .title {
+  margin-bottom: 1rem;
+}
+
+article > .title:before {
+  content: "$ ";
+}
+
+footer {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+    #profile-picture > img {
+        width: 600px;
+    }
+
+    article {
+      width: 600px;
+    }
+}
