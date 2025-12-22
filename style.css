@@ -46,7 +46,7 @@ body {
 .hovercraft > span {
   text-align: center;
   position: fixed;
-  top: -50px;
+  top: -3rem;
   color: orange;
   width: 100%;
   font-weight: bold;
@@ -102,12 +102,16 @@ article {
   border: 3px dashed #08AA6E;
 }
 
-article > .title {
+.title {
   margin-bottom: 1rem;
 }
 
-article > .title:before {
+.title:before {
   content: "$ ";
+}
+
+.title.large {
+  display: none;
 }
 
 footer {
@@ -130,6 +134,14 @@ footer {
 }
 
 @media (min-width: 650px) {
+  .title.large {
+    display: inline-block;
+  }
+
+  .title.small {
+    display: none;
+  }
+
   .github-readme-stats {
     display: flex;
     flex-direction: row;
