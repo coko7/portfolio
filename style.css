@@ -68,7 +68,6 @@ header {
 }
 
 #profile-picture > img {
-  margin: 0 1rem;
   max-width: 100%;
 }
 
@@ -114,6 +113,7 @@ footer {
 @media (min-width: 600px) {
     #profile-picture > img {
         width: 600px;
+        margin: 0 1rem;
     }
 
     article {
