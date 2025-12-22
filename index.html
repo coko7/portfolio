@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coko7</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v16/font/simple-icons.min.css" type="text/css">
+    <meta name="author" content="coko7">
+    <meta name="description" content="Hi! I'm coko, a french dev who's passionate about programming and open-source. I love working with Linux environments and the terminal is where I spend most of my time.">
+    <meta name="subject" content="coko7's portfolio">
+    <link rel="icon" sizes="192x192" href="./assets/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/favicon.png">
   </head>
   <body>
     <header>
@@ -14,27 +20,35 @@
       <div id="profile-picture">
         <img id="profile-picture" src="./assets/coko7_small.png" alt="coko's avatar">
       </div>
+
+      <div class="hovercraft">
+        <span class="hidden">0</span>
+      </div>
+
       <article class="intro">
-        <h3 class="title">whoami | xargs -i cat intro_{}.txt</h2>
+        <h3 class="title">whoami | xargs -i cat intro_{}.txt</h3>
         <p>I'm coko.</p>
         <p>A french dev passionate about programming and open-source</p>
         <p>The terminal is my comfy place: Linux, nvim, fzf <i>*and more*</i></p>
       </article>
 
       <article>
-        <h3 class="title">fd .git --type dir --hidden <span class="env-var">$HOME</span>/projects</h2>
-        <p><a href="https://github.com/coko7/vegapull">vegapull/</a> One Piece TCG data scraper</p>
-        <p><a href="https://github.com/coko7/advent-of-time">aot/</a> Advent of Time browser game</p>
-        <p><a href="https://github.com/coko7/mataho">mataho/</a> CLI to interact with a local Tahoma box</p>
-        <p><a href="https://github.com/coko7/kanumi">kanumi/</a> CLI to manage collection of images</p>
+        <h3 class="title">fd .git --type dir --hidden <span class="env-var">$HOME</span>/projects</h3>
+        <p><a class="btn-link" href="https://github.com/coko7/vegapull">vegapull/</a> One Piece TCG data scraper</p>
+        <p><a class="btn-link" href="https://github.com/coko7/advent-of-time">aot/</a> Advent of Time browser game</p>
+        <p><a class="btn-link" href="https://github.com/coko7/mataho">mataho/</a> CLI to interact with a local Tahoma box</p>
+        <p><a class="btn-link" href="https://github.com/coko7/kanumi">kanumi/</a> CLI to manage collection of images</p>
       </article>
 
       <article>
         <h3 class="title">glow <span class="env-var">$(</span>locate '*env-config.md' | head -n 1<span class="env-var">)</span></h3>
-        <p><a href="https://github.com/coko7/.dotfiles">.dotfiles/</a> My Arch Linux config files and scripts</p>
-        <p><a href="https://github.com/coko7/my-floss">my-floss/</a> Free/Libre Open-Source stuff I use</p>
-        <img id="keyboard-picture" src="./assets/crkbd_kb.png" alt="custom Corne keyboard">
-        <p style="text-align: center">More about my keyboard at <a href="https://github.com/coko7/crkbd">coko7/crkbd</a></p>
+        <p><a class="btn-link" href="https://github.com/coko7/.dotfiles">.dotfiles/</a> My Arch Linux config files and scripts</p>
+        <p><a class="btn-link" href="https://github.com/coko7/nvim-config">nvim-config/</a> My custom <span class="env-var">$EDITOR</span> config</p>
+        <p><a class="btn-link" href="https://github.com/coko7/my-floss">my-floss/</a> Free/Libre Open-Source stuff I use</p>
+        <a href="https://github.com/coko7/crkbd">
+          <img id="keyboard-picture" src="./assets/crkbd_kb.png" alt="custom Corne keyboard">
+        </a>
+        <p style="text-align: center">More about my keyboard at <a class="btn-link" href="https://github.com/coko7/crkbd">coko7/crkbd</a></p>
       </article>
 
       <article>
@@ -46,10 +60,36 @@
       </article>
 
       <article>
-        <h3 class="title">rg social | awk print '{<span class="env-var">$2</span>,<span class="env-var">$3</span>}'</h3>
-        <p><a href="https://github.com/coko7">GitHub</a></p>
+        <h3 class="title">rg social | awk print -F; '{<span class="env-var">$2</span>,<span class="env-var">$3</span>}'</h3>
+
+        <p>
+          <a class="btn-link" href="https://github.com/coko7">
+            <i class="si si-github" style="font-weight: normal"></i>
+            GitHub:</a>
+          code, programming and stuff
+        </p>
+        <p>
+          <a class="btn-link" href="https://kitsu.app/users/brokomus">
+            <i class="si si-kitsu" style="font-weight: normal"></i>
+            Kitsu:</a>
+          my anime/manga lists
+        </p>
+        <p>
+          <a class="btn-link" href="https://crates.io/users/coko7">
+            <i class="si si-rust" style="font-weight: normal"></i>
+            crates.io:</a>
+          where i publish my rust crates and clis
+        </p>
+        <p>
+          <a class="btn-link" href="https://app.daily.dev/zydro_palm">
+            <i class="si si-dailydotdev" style="font-weight: normal"></i>
+            daily.dev:</a>
+          i am there but also not really
+        </p>
       </article>
     </main>
+
+    <script src="script.js"></script>
 
     <footer>
       Copyright (c) 2025 coko7. All Rights Reserved.
