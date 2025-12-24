@@ -54,7 +54,11 @@ header {
   margin: 2rem;
 }
 
-.github-stats-article {
+/* .github-stats-article { */
+/*   display: none; */
+/* } */
+
+#gh-snake {
   display: none;
 }
 
@@ -124,6 +128,7 @@ footer {
   .github-stats-article {
     display: block;
   }
+
   .github-readme-stats {
     display: flex;
     flex-direction: column;
@@ -132,12 +137,8 @@ footer {
     /* align-items: flex-start; */
   }
 
-  #gh-snake {
-    max-width: 100%;
-  }
-
   .github-readme-stats img {
-    max-height: 200px;
+    max-width: 100%;
   }
 }
 
@@ -155,6 +156,11 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  #gh-snake {
+    display: block;
+    max-width: 100%;
   }
 
   .github-stats {
