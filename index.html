@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>coko7</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v16/font/simple-icons.min.css" type="text/css">
+    <title>coko7 | read.me</title>
     <meta name="author" content="coko7">
     <meta name="subject" content="coko7 | read.me">
     <meta property="og:title" content="coko7 | read.me">
@@ -19,6 +17,8 @@
     <meta name="twitter:image" content="https://coko7.fr/assets/coko7-banner.png">
     <link rel="icon" sizes="192x192" href="./assets/favicon.png">
     <link rel="apple-touch-icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v16/font/simple-icons.min.css" type="text/css">
   </head>
   <body>
     <header>
@@ -26,7 +26,7 @@
     </header>
     <main>
       <div id="profile-picture">
-        <img id="profile-picture" src="./assets/coko7_small.png" alt="coko's avatar">
+        <img id="profile-img" src="./assets/coko7_small.png" alt="coko's avatar">
       </div>
 
       <div class="hovercraft">
@@ -79,18 +79,37 @@
       <article>
         <h3 class="title large">ssh homelab@127.0.0.1 -p 22</h3>
         <h3 class="title small">ssh homelab@127.0.0.1</h3>
-        <a href="https://http.cat">
-          <img style="max-width: 100%" src="https://http.cat/501"/>
-        </a>
+        <div>
+          <h4>Hardware</h4>
+          <p>* NAS for data replication and backup strategy</p>
+          <p>* Rasperry Pi 4 & 5 for hosting services</p>
+          <p>* Virtual Private Server (<a class="btn-link" href="/">here</a>)</p>
+        </div>
+        <br/>
+        <div>
+          <h4>Software</h4>
+          <p>* Self-hosted send instance at <a href="https://send.coko7.fr" class="btn-link">send.coko7.fr</a></p>
+          <p>* AOT game at <a href="https://aot.coko7.fr" class="btn-link">aot.coko7.fr</a></p>
+        </div>
       </article>
 
       <article>
-        <h3 class="title large">bat hobbies.txt</h3>
-        <h3 class="title small">cat hobbies.txt</h3>
-        <p>* coding</p>
-        <p>* running</p>
-        <p>* reading</p>
-        <p>* anime</p>
+        <h3 class="title large">jq .coco.hobbies &lt; info.json</h3>
+        <h3 class="title small">jq . &lt; hobbies.json</h3>
+        <pre class="pre-json large"><code>[
+  { <span class="hl-str">"name"</span>: "programming", <span class="hl-str">"emoji"</span>: "⌨️" },
+  { <span class="hl-str">"name"</span>: "running", <span class="hl-str">"emoji"</span>: "🏃" },
+  { <span class="hl-str">"name"</span>: "reading", <span class="hl-str">"emoji"</span>: "📖" },
+  { <span class="hl-str">"name"</span>: "anime", <span class="hl-str">"emoji"</span>: "🇯🇵" },
+  { <span class="hl-str">"name"</span>: "gaming", <span class="hl-str">"emoji"</span>: "🎮" }
+]</code></pre>
+        <pre class="pre-json small"><code>[
+  { <span class="hl-str">"name"</span>: "programming" },
+  { <span class="hl-str">"name"</span>: "running" },
+  { <span class="hl-str">"name"</span>: "reading" },
+  { <span class="hl-str">"name"</span>: "anime" },
+  { <span class="hl-str">"name"</span>: "gaming" }
+]</code></pre>
       </article>
 
       <article>
@@ -133,7 +152,7 @@
     <script src="script.js"></script>
 
     <footer>
-      Copyright (c) 2025 coko7. All Rights Reserved.
+      Copyright <span id="copyright-span">(c)</span> 2025 coko7. All Rights Reserved.
     </footer>
   </body>
 </html>
