@@ -203,3 +203,38 @@ footer {
     max-width: 100%;
     border: 1px solid #57F7BC;
 }
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    padding: 1.5rem 2rem;
+    color: white;
+    background-color: #131516;
+    border: 5px dashed #f38ba8;
+}
+
+dialog>h2 {
+
+    color: #f38ba8;
+    margin-bottom: 1em;
+}
+
+dialog#i-forgor span {
+    color: orange;
+}
+
+/* top-right cross */
+dialog .close-btn {
+    color: #57F7BC;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
