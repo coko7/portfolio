@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iForgorDialog.showModal();
   }
 
-  const overCraftSpan = document.querySelector(".hovercraft>span");
+  overCraftSpan = document.querySelector(".hovercraft>span");
   profileImg = document.getElementById("profile-img");
   introArticle = document.querySelector("article.intro");
 
