@@ -51,7 +51,20 @@ span.env-var {
 }
 
 header {
+    text-align: center;
     margin: 2rem;
+}
+
+header>* {
+    margin: 1rem 0;
+}
+
+header>h3 {
+    font-weight: normal;
+}
+
+header>h3>b {
+    color: orange;
 }
 
 /* .github-stats-article { */
