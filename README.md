@@ -1,6 +1,6 @@
 # ✨ portfolio
 
-Source code for my static portfolio website: [coko7.fr](https://coko7.fr)
+Source code for my static portfolio website: [nrd.coko7.fr](https://nrd.coko7.fr)
 
 ## Credits
 
