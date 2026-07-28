@@ -1,6 +1,6 @@
 # ✨ portfolio
 
-Source code for my static portfolio website: [lazyfreax.dev](https://lazyfreax.dev)
+Source code for my static portfolio website: [coko.lazyfreax.dev](https://coko.lazyfreax.dev)
 
 ## Credits
 
