@@ -39,13 +39,13 @@
         <h3 class="title small">whoami</h3>
         <p>I'm coko.</p><br/>
         <p>A french developer who’s passionate about programming and open-source.</p><br>
-        <p>I spend most of my time in the terminal and rely on a variety of command-line tools to help me on my day job: neovim, tmux, fzf, sed, rg, jq, git, curl, xh, ssh, and many more…</p>
+        <p>I spend most of my time in the terminal and rely on a variety of command-line tools to help me on my day job: <b>neovim, tmux, fzf, sed, rg, jq, git, curl, xh, ssh,</b> <i>and many more…</i></p>
       </article>
 
       <article class="blog">
         <h3 class="title large">zola serve --open</h3>
         <h3 class="title small">zola serve</h3>
-        <p>Sometimes, I write some articles on my Zola blog: <a class="btn-link" href="https://blog.lazyfreax.dev">The Terminal Yard</a></p><br>
+        <p>Sometimes, I write stuff on my Zola blog: <a class="btn-link" href="https://blog.lazyfreax.dev">The Terminal Yard</a></p><br>
         <p>Latest posts:</p>
         <p>* <a href="https://blog.lazyfreax.dev/blog/latuicon-icon-picker/" class="btn-link">latuicon: the TUI icon picker from late.sh</a></p>
         <p>* <a href="https://blog.lazyfreax.dev/blog/custom-desktop-web-apps-with-hyprland/" class="btn-link">Custom Desktop Web Apps with Hyprland</a></p>
@@ -102,16 +102,15 @@
       <article>
         <h3 class="title large">glow <span class="env-var">$(</span>locate '*env-config.md' | head -n 1<span class="env-var">)</span></h3>
         <h3 class="title small">glow env-config.md</h3>
-        <p><a class="btn-link" href="https://github.com/coko7/.dotfiles">.dotfiles/</a> 🔧 All the .dotfiles that I use for my Linux config </p>
-        <p><a class="btn-link" href="https://github.com/coko7/scripts">scripts</a> 🛠️ My personal collection of shell scripts I rely on everyday. </p>
+        <p><a class="btn-link" href="https://github.com/coko7/.dotfiles">.dotfiles/</a> All the .dotfiles that I use for my Linux config</p>
+        <p><a class="btn-link" href="https://github.com/coko7/scripts">scripts</a> My personal collection of shell scripts I rely on everyday</p>
+        <p><a class="btn-link" href="https://github.com/coko7/archy-factory">archy-factory/</a> Automated Arch Linux install factory</p>
         <p><a class="btn-link" href="https://github.com/coko7/nvim-config">nvim-config/</a> My custom <span class="env-var">$EDITOR</span> config</p>
         <p><a class="btn-link" href="https://github.com/coko7/my-floss">my-floss/</a> Free/Libre Open-Source stuff I use</p>
         <p><a class="btn-link" href="https://github.com/coko7/sofle">sofle/</a> QMK config for my first ergo keyboard (58 keys)</p>
         <p><a class="btn-link" href="https://github.com/coko7/crkbd">crkbd/</a> Vial config for my previous wired Corne (46 keys)</p>
         <p><a class="btn-link" href="https://github.com/coko7/zmk-config">zmk-config/</a> ZMK config for my newest wireless Corne Pro (36 keys)</p>
-        <a href="https://github.com/coko7/crkbd">
-          <img id="keyboard-picture" src="./assets/all_keebs.webp" alt="custom Corne keyboard">
-        </a>
+        <img id="keyboard-picture" src="./assets/all_keebs.webp" alt="custom Corne keyboard">
         <p style="text-align: center">More about my current keyboard at <a class="btn-link" href="https://github.com/coko7/zmk-config">coko7/zmk-config</a></p>
       </article>
 
@@ -141,21 +140,21 @@
         <h3 class="title large">jq .coko.hobbies &lt; info.json</h3>
         <h3 class="title small">jq . &lt; hobbies.json</h3>
         <pre class="pre-json large"><code>[
-          { "name": <span class="hl-str">"⌨️ coding"</span>, <span>"frequency"</span>: <span class="hl-str">"daily"</span> },
-          { "name": <span class="hl-str">"📖 reading"</span>, <span>"frequency"</span>: <span class="hl-str">"daily"</span> },
-          { "name": <span class="hl-str">"🏃 running"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
-          { "name": <span class="hl-str">"✏️ drawing"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
-          { "name": <span class="hl-str">"🇯🇵 anime"</span>, <span>"frequency"</span>: <span class="hl-str">"random"</span> },
-          { "name": <span class="hl-str">"🎮 gaming"</span>, <span>"frequency"</span>: <span class="hl-str">"random"</span> }
-          ]</code></pre>
+    { "name": <span class="hl-str">"⌨️ coding"</span>, <span>"frequency"</span>: <span class="hl-str">"daily"</span> },
+    { "name": <span class="hl-str">"📖 reading"</span>, <span>"frequency"</span>: <span class="hl-str">"daily"</span> },
+    { "name": <span class="hl-str">"🏃 running"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
+    { "name": <span class="hl-str">"✏️ drawing"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
+    { "name": <span class="hl-str">"🇯🇵 anime"</span>, <span>"frequency"</span>: <span class="hl-str">"random"</span> },
+    { "name": <span class="hl-str">"🎮 gaming"</span>, <span>"frequency"</span>: <span class="hl-str">"random"</span> }
+]</code></pre>
         <pre class="pre-json small"><code>[
-          { "coding": <span class="hl-str">"daily"</span> },
-          { "reading": <span class="hl-str">"daily"</span> },
-          { "running": <span class="hl-str">"weekly"</span> },
-          { "drawing": <span class="hl-str">"weekly"</span> },
-          { "anime": <span class="hl-str">"random"</span> },
-          { "gaming": <span class="hl-str">"random"</span> }
-          ]</code></pre>
+    { "coding": <span class="hl-str">"daily"</span> },
+    { "reading": <span class="hl-str">"daily"</span> },
+    { "running": <span class="hl-str">"weekly"</span> },
+    { "drawing": <span class="hl-str">"weekly"</span> },
+    { "anime": <span class="hl-str">"random"</span> },
+    { "gaming": <span class="hl-str">"random"</span> }
+]</code></pre>
       </article>
 
       <article>
@@ -228,6 +227,13 @@
             <i class="si si-bluesky" style="font-weight: normal"></i>
             Bluesky:</a>
           I might post stuff here
+        </p>
+        <p>
+          <a class="btn-link" href="https://www.linkedin.com/in/corentin-humbert">
+            <i class="si si-inspire" style="font-weight: normal"></i>
+            LinkedIn:</a>
+          Professional stuff ¯\_(ツ)_/¯
+          <!-- Using the si-inspire logo here because LinkedIn is potato company: https://github.com/simple-icons/simple-icons/issues/11372 -->
         </p>
         <p>
           <a class="btn-link" href="https://mastodon.social/@cobalt_cook718">
