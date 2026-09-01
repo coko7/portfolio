@@ -67,6 +67,10 @@ header>h3>b {
     color: orange;
 }
 
+h4 {
+  margin: 0.5em 0;
+}
+
 /* .github-stats-article { */
 /*   display: none; */
 /* } */
