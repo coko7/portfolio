@@ -42,7 +42,7 @@ body {
     font-weight: bold;
 }
 
-span.env-var {
+.env-var {
     color: orange;
 }
 
