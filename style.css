@@ -279,3 +279,23 @@ dialog .close-btn {
     line-height: 1;
     cursor: pointer;
 }
+
+.gradient-text {
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff4500, #ff8c00, #ff6347, #dc143c, #ff4500);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
