@@ -269,6 +269,10 @@ footer {
     border: 1px solid #57F7BC;
 }
 
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 dialog {
     position: fixed;
     top: 50%;
@@ -330,4 +334,13 @@ dialog .close-btn {
 
 .termcol img {
   max-width: 200px;
+  cursor: pointer;
+}
+
+.termcol img:hover {
+  filter:
+    drop-shadow(2px 0 0 #57F7BC)
+    drop-shadow(-2px 0 0 #57F7BC)
+    drop-shadow(0 2px 0 #57F7BC)
+    drop-shadow(0 -2px 0 #57F7BC)
 }
