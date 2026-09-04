@@ -173,6 +173,16 @@ footer {
     .github-readme-stats img {
         max-width: 100%;
     }
+
+    .termcol > .cols {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .termcol > .cols img {
+      margin: 1em;
+    }
 }
 
 @media (min-width: 650px) {
@@ -203,7 +213,25 @@ footer {
         display: flex;
         flex-direction: column;
     }
-}
+
+    .termcol > .cols  {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .termcol > .cols img {
+      display: inherit;
+    }
+
+    .termcol > .cols > div {
+      margin: 0.5em;
+    }
+
+    .termcol > .cols {
+      margin-bottom: 1em;
+    }
+  }
 
 @media (min-width: 750px) {
     #profile-picture>img {
@@ -298,4 +326,8 @@ dialog .close-btn {
   100% {
     background-position: 300% 50%;
   }
+}
+
+.termcol img {
+  max-width: 200px;
 }
