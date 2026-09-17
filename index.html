@@ -104,21 +104,21 @@
         <div class="cols">
           <div>
             <a href="https://terminalcollective.org">
-              <img src="./assets/terminal-collective-logo.png" alt="Terminal Collective logo">
+              <img id="termcol-logo" src="./assets/terminal-collective-logo.png" alt="Terminal Collective logo">
             </a>
           </div>
           <div>
             <p>I co-host a podcast called <b>Terminal Tuesday</b> with <a class="btn-link" href="https://github.com/orhun/">Orhun Parmaksız</a> <i>(<a class="btn-link" href="https://ratatui.rs/">ratatui</a> btw)</i>,
               where we invite fellow terminal nerds to talk about their projects and setup.</p><br/>
-            <p>We've had the chance to discuss with a lot of brilliant people all around the world about various topics relating to the terminal space.</p><br/>
-            <p>If you enjoy spending time in the terminal, you should check it out!</p>
-            <p>Episodes are freely available on
-              <a class="btn-link" href="https://www.youtube.com/@TerminalCollectiveOrg">
-                <i class="si si-youtube" style="font-weight: normal"></i> YouTube
-              </a>
-            </p>
+            <p>We've had the chance to discuss with a lot of brilliant people all around the world about various topics relating to the terminal space.</p>
           </div>
         </div>
+        <p class="env-var" style="text-align: center;">✨ Checkout the latest episodes ✨</p>
+        <div id="latest-videos"></div>
+        <p>You can watch more episodes on 
+          <a class="btn-link" href="https://www.youtube.com/@TerminalCollectiveOrg">
+            <i class="si si-youtube" style="font-weight: normal"></i> YouTube</a>.
+        </p>
         <p>Visit the <a class="btn-link" href="https://terminalcollective.org">Terminal Collective</a> website to learn more.</p>
       </article>
 
@@ -194,7 +194,9 @@
           <p><a class="btn-link" href="https://github.com/coko7/sofle">★ sofle/</a> QMK config for my first ergo keyboard <span class="env-var">(58 keys)</span></p>
           <p><a class="btn-link" href="https://github.com/coko7/crkbd">★ crkbd/</a> Vial config for my previous wired Corne <span class="env-var">(46 keys)</span></p>
           <p><a class="btn-link" href="https://github.com/coko7/zmk-config">★ zmk-config/</a> ZMK config for my newest wireless Corne Pro <span class="env-var">(36 keys)</span></p>
-          <img id="keyboard-picture" src="./assets/all_keebs.webp" alt="custom Corne keyboard">
+          <div class="centered-picture">
+            <img id="keyboard-picture" src="./assets/all_keebs.webp" alt="custom Corne keyboard">
+          </div>
           <p style="text-align: center">More about my current keyboard at <a class="btn-link" href="https://github.com/coko7/zmk-config">coko7/zmk-config</a></p>
         </div>
       </article>
@@ -245,15 +247,19 @@
       </article>
 
       <article>
-        <h3 class="title large">chronicler ./</h3>
-        <h3 class="title small">chronicler ./</h3>
+        <h3 class="title large">bat --style=plain --color=always world-building.md</h3>
+        <h3 class="title small">bat -pf world-building.md</h3>
         <p>I have always loved <b>drawing</b> <i>(on paper or w/ <a class="btn-link" href="https://www.gimp.org/">Gimp</a>)</i> and <b>writing</b>.</p>
         <p>Even before falling in love with programming, I was scribbling characters on my notebooks and writing manga.</p><br/>
         <p>For more than <b>10 years</b>, I have been building my own fantasy worlds and stories. And recently, I decided to put all of them in a wiki of <span class="env-var">Markdown</span> files, which I edit with <a class="btn-link" href="https://obsidian.md/">Obsidian</a>.</p><br/>
         <p>The graph below is a recent snapshot of the entire wiki. The nodes represent <span style="color: #e05454">characters</span>, <span style="color: #aedd4f">species</span>, <span style="color: #d7b152">locations</span>, <span style="color: #52b1e0">organizations</span>, <i>etc.</i></p>
-        <img id="wb-wiki-graph" src="./assets/world-building-wiki-graph.png" alt="Screenshot of the World Building wiki Obsidian graph" style="margin: 1rem 0">
+        <div class="centered-picture">
+          <object id="wbw-svg" type="image/svg+xml" data="assets/wb-wiki-graph.svg">
+            Your browser doesn't support SVG
+          </object>
+        </div>
         <p>The wiki is private and I don't really plan on opening it anytime soon. <br/>I am just happy writing and drawing for myself ᕕ( ᐛ )ᕗ</p><br/>
-        <p><i>btw: <a class="btn-link" href="https://github.com/mak-kirkland/chronicler">Chronicler</a> is a nice tool to build such wiki, but I prefer my setup for now.</i></p>
+        <p><i><b>BTW:</b> If you are into World Building and you like open source tools, you should checkout <a class="btn-link" href="https://github.com/mak-kirkland/chronicler">Chronicler</a>.</i></p>
       </article>
 
       <article>
@@ -291,18 +297,18 @@
       <article>
         <h3 class="title large">zathura resumes/*.pdf</h3>
         <h3 class="title small">zathura resumes/*.pdf</h3>
+        <div style="text-align: center; margin-top: 1em">
+          <a href="https://http.cat/status/501">
+            <img class="http-cat" src="https://http.cat/501" alt="">
+          </a>
+        </div><br/>
 
         <p style="text-align: center; margin-bottom: 1em; color: orange;"><i>*Coming soon*</i></p>
         <p>I'd like to setup some CDN and have it serve my resume(s) for fun.</p>
         <p>For now, you can email me at <a class="btn-link" href="mailto:contact@coko7.fr">contact@coko7.fr</a> to get a fresh copy.</p>
         <p>I only support <b>english</b> and <b>français</b>.</p><br/>
-        <p>Surely this entire plot wasn't just an excuse to make use of <a class="btn-link" href="https://http.cat">http.😼</a>:</p>
+        <p>Surely this entire section wasn't just an excuse to make use of <a class="btn-link" href="https://http.cat">http.😼</a></p>
 
-        <div style="text-align: center; margin-top: 1em">
-          <a href="https://http.cat/status/501">
-            <img class="http-cat" src="https://http.cat/501" alt="">
-          </a>
-        </div>
       </article>
 
       <article>
@@ -345,6 +351,12 @@
             <i class="si si-x" style="font-weight: normal"></i>
             Twitter:</a>
           my boring twitter
+        </p>
+        <p>
+          <a class="btn-link" href="https://www.twitch.tv/coko_freax">
+            <i class="si si-twitch" style="font-weight: normal"></i>
+            Twitch:</a>
+          I may stream once in a blue moon
         </p>
         <p>
           <a class="btn-link" href="https://app.daily.dev/coko7">
