@@ -56,15 +56,13 @@ async function loadLatestVideos() {
   try {
     const response = await fetch('data/last-3-tty-videos.json');
     if (!response.ok) {
-      const errHtml = "<b style=\"color: #F44336\">... Video file is somehow not fetchable ୧((#Φ益Φ#))୨ !!!!</b>";
-      showFailedToLoadVideosError(errHtml)
+      renderTTLoadErrorMessage('... Video file is somehow not fetchable ୧((#Φ益Φ#))୨ !!!!')
       throw new Error(`HTTP error: ${response.status}`);
     }
 
     const videos = await response.json();
     if (!videos || videos.length !== 3) {
-      const errHtml = "<b style=\"color: #F44336\">... Could not load latest YouTube videos (╯`Д´)╯︵ ┻━┻</b>";
-      showFailedToLoadVideosError(errHtml)
+      renderTTLoadErrorMessage('... Could not load latest YouTube videos (╯`Д´)╯︵ ┻━┻')
       return;
     }
 
@@ -74,9 +72,9 @@ async function loadLatestVideos() {
   }
 }
 
-function showFailedToLoadVideosError(htmlMessage) {
-  const container = document.getElementById('latest-videos');
-  container.innerHTML = htmlMessage;
+function renderTTLoadErrorMessage(message) {
+  const p = document.getElementById('load-tt-videos-error');
+  p.innerHTML = message;
 }
 
 function renderVideos(videos) {

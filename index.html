@@ -115,6 +115,7 @@
         </div>
         <p class="env-var" style="text-align: center;">✨ Checkout the latest episodes ✨</p>
         <div id="latest-videos"></div>
+        <p id="load-tt-videos-error"></p>
         <p>You can watch more episodes on 
           <a class="btn-link" href="https://www.youtube.com/@TerminalCollectiveOrg">
             <i class="si si-youtube" style="font-weight: normal"></i> YouTube</a>.
@@ -204,13 +205,18 @@
       <article>
         <h3 class="title large">ssh homelab@127.0.0.1 -p 22</h3>
         <h3 class="title small">ssh homelab@127.0.0.1</h3>
-        <div>
-          <h4>Hardware</h4>
-          <p>* NAS for data replication and backup strategy</p>
-          <p>* Rasperry Pi 4 & 5 for hosting services</p>
-          <p>* Virtual Private Server (<a class="btn-link" href="/">here</a>)</p>
+        <div class="homelab-cols cols">
+          <div class="cols-text">
+            <h4>Hardware</h4>
+            <p>* NAS for data replication and backup strategy</p>
+            <p>* Rasperry Pi 4 & 5 for hosting services</p>
+            <p>* Virtual Private Server (<a class="btn-link" href="/">here</a>)</p>
+          </div>
+          <div class="cols-illustration">
+            <img id="homelab-illustration" src="./assets/homelab.png" alt="Homelab illustration">
+          </div>
         </div>
-        <br/>
+
         <div>
           <h4>Software</h4>
           <p>* <a href="https://status.lazyfreax.dev/status/main" class="btn-link">Uptime Kuma</a> for monitoring services</p>
