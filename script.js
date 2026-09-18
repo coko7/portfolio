@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   loadLatestVideos();
+
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 1725);
+  });
 });
 
 async function loadLatestVideos() {

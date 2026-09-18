@@ -26,6 +26,7 @@
       <h1>read.me</h1>
       <h3><b>N</b>eovim <b>E</b>vangelist, <b>R</b>ewriting <b>D</b>otfiles</h3>
     </header>
+
     <main>
       <div id="profile-picture">
         <img id="profile-img" src="./assets/coko_crkbd.png" alt="coko's avatar">
@@ -35,7 +36,7 @@
         <span class="hidden">0</span>
       </div>
 
-      <article class="intro">
+      <article id="whoami" class="intro">
         <h3 class="title large">whoami | xargs -i cat intro_{}.txt</h3>
         <h3 class="title small">whoami</h3>
         <p>I'm coko 👋</p><br/>
@@ -44,7 +45,7 @@
         <p>I also like DevOps: managing my home lab(s), deploying things with Docker, etc.</p>
       </article>
 
-      <article class="blog">
+      <article id="tty-blog" class="blog">
         <h3 class="title large">zola serve --open</h3>
         <h3 class="title small">zola serve</h3>
         <p>Sometimes, I write stuff on my blog: <a class="btn-link" href="https://blog.lazyfreax.dev">The Terminal Yard (tty)</a></p><br>
@@ -62,7 +63,7 @@
         </p>
       </article>
 
-      <article>
+      <article id="projects">
         <h3 class="title large">fd .git --type dir --hidden <span class="env-var">$HOME</span>/projects</h3>
         <h3 class="title small">find projects -type d</h3>
         <p>
@@ -97,7 +98,7 @@
         </p>
       </article>
 
-      <article class="termcol">
+      <article id="terminal-collective" class="termcol">
         <h3 class="title large">pw-record terminal-tuesday-<span class="env-var">$(</span>date +%y-%m-%d<span class="env-var">)</span>.wav</h3>
         <h3 class="title small">pw-record tt-<span class="env-var">$(</span>date +%V<span class="env-var">)</span>.wav</h3>
 
@@ -124,7 +125,7 @@
       </article>
 
 
-      <article>
+      <article id="rtfw-projects">
         <h3 class="title large">cargo build --rewrite-the-freaking-wheel</h3>
         <h3 class="title small">cargo build -rtfw</h3>
         <p>I like to try writing existing stuff from scratch.</p>
@@ -152,7 +153,7 @@
         </p>
       </article>
 
-      <article class="github-stats-article">
+      <article id="github-stats" class="github-stats-article">
         <h3 class="title large">gh --stats --user=<span class="env-var">$(</span>whoami<span class="env-var">)</span></h3>
         <h3 class="title small">gh --stats --user=<span class="env-var">$(</span>whoami<span class="env-var">)</span></h3>
         <p>I push my code to GitHub for simplicity. However, I also self-host my own instance of Forgejo:
@@ -178,7 +179,7 @@
         </div>
       </article>
 
-      <article>
+      <article id="dotfiles-and-config">
         <h3 class="title large">glow <span class="env-var">$(</span>locate '*env-config.md' | head -n 1<span class="env-var">)</span></h3>
         <h3 class="title small">glow env-config.md</h3>
         <div>
@@ -202,7 +203,7 @@
         </div>
       </article>
 
-      <article>
+      <article id="homelab">
         <h3 class="title large">ssh homelab@127.0.0.1 -p 22</h3>
         <h3 class="title small">ssh homelab@127.0.0.1</h3>
         <div class="homelab-cols cols">
@@ -229,7 +230,7 @@
         </div>
       </article>
 
-      <article>
+      <article id="hobbies">
         <h3 class="title large">jq .coko.hobbies &lt; info.json</h3>
         <h3 class="title small">jq . &lt; hobbies.json</h3>
         <pre class="pre-json large"><code>[
@@ -252,7 +253,7 @@
 ]</code></pre>
       </article>
 
-      <article>
+      <article id="world-building">
         <h3 class="title large">bat --style=plain --color=always world-building.md</h3>
         <h3 class="title small">bat -pf world-building.md</h3>
         <p>I have always loved <b>drawing</b> <i>(on paper or w/ <a class="btn-link" href="https://www.gimp.org/">Gimp</a>)</i> and <b>writing</b>.</p>
@@ -268,7 +269,7 @@
         <p><i><b>BTW:</b> If you are into World Building and you like open source tools, you should checkout <a class="btn-link" href="https://github.com/mak-kirkland/chronicler">Chronicler</a>.</i></p>
       </article>
 
-      <article>
+      <article id="some-good-books">
         <h3 class="title large">nvim -o <span class="env-var">$(</span>echo some,good,books.md | sd 's|,|_|g'<span class="env-var">)</span></h3>
         <h3 class="title small">vi some_good_books.md</h3>
         <div class="books">
@@ -300,7 +301,7 @@
         <p style="text-align: center; margin-top: 1em;">My notes/cheatsheets on Practical Vim: <a class="btn-link" href="https://github.com/coko7/practical-vim-notes">coko7/practical-vim-notes</a></p>
       </article>
 
-      <article>
+      <article id="get-my-resume">
         <h3 class="title large">zathura resumes/*.pdf</h3>
         <h3 class="title small">zathura resumes/*.pdf</h3>
         <div style="text-align: center; margin-top: 1em">
@@ -317,7 +318,7 @@
 
       </article>
 
-      <article>
+      <article id="social">
         <h3 class="title large">rg social | awk print -F; '{<span class="env-var">$2</span>,<span class="env-var">$3</span>}'</h3>
         <h3 class="title small">grep social</h3>
 
@@ -378,6 +379,10 @@
         </p>
       </article>
     </main>
+
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      <i class="si si-archlinux"></i>
+    </button>
 
     <script src="script.js"></script>
 
