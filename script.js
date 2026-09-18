@@ -51,9 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadLatestVideos();
 
-  const btn = document.getElementById('back-to-top');
+  const backToTopBtn = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 1725);
+    backToTopBtn.classList.toggle('visible', window.scrollY > 1725);
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    history.pushState(null, '', window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.querySelectorAll('article[id] > h3').forEach(h3 => {
+    h3.addEventListener('click', () => {
+      const article = h3.parentElement;
+      history.pushState(null, '', `#${article.id}`);
+      h3.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
 });
 
