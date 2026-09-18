@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  # needed for `gh workflow run` to dispatch another workflow
+  actions: write
 
 jobs:
   update:
@@ -30,5 +32,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/last-3-tty-videos.json
-          git diff --staged --quiet || git commit -m "chore: auto fetched latest TT videos"
-          git push
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore: auto fetched latest TT videos"
+            git pull --rebase --autostash
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Pages deploy
+        if: success()
+        run: |
+          gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
