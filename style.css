@@ -343,8 +343,16 @@ footer {
 
 .books img {
   max-width: 90%;
+  opacity: 0.85;
   margin: 0.5em 0;
   border: 1px solid var(--link-color);
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.books > a:hover img {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 dialog::backdrop {
