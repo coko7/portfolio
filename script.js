@@ -52,36 +52,41 @@ document.addEventListener("DOMContentLoaded", function () {
   loadLatestVideos();
 });
 
-// Feel free to steal and re-use the key *if you can* ( ͡° ͜ʖ ͡°)
-const API_KEY = 'AIzaSyBYxaee673AnhG4FdKAspVKh5TVPUs7gpc';
-// https://www.youtube.com/@TerminalCollectiveOrg
-const CHANNEL_ID = 'UCuxDrxscs0N-EmpXspDdhRg';
-
 async function loadLatestVideos() {
-  const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=3&type=video`;
+  try {
+    const response = await fetch('data/last-3-tty-videos.json');
+    if (!response.ok) {
+      const errHtml = "<b style=\"color: #F44336\">... Video file is somehow not fetchable ୧((#Φ益Φ#))୨ !!!!</b>";
+      showFailedToLoadVideosError(errHtml)
+      throw new Error(`HTTP error: ${response.status}`);
+    }
 
-  const res = await fetch(url);
-  const data = await res.json();
+    const videos = await response.json();
+    if (!videos || videos.length !== 3) {
+      const errHtml = "<b style=\"color: #F44336\">... Could not load latest YouTube videos (╯`Д´)╯︵ ┻━┻</b>";
+      showFailedToLoadVideosError(errHtml)
+      return;
+    }
 
-  const container = document.getElementById('latest-videos');
-  if (!data.items) {
-    console.error("failed to load latest videos from Terminal Collective");
-    container.innerHTML = "<b style=\"color: #F44336\">... Could not load latest YouTube videos (╯`Д´)╯︵ ┻━┻</b>"
-    return;
+    renderVideos(videos);
+  } catch (error) {
+    console.error('Failed to load videos:', error);
   }
+}
 
-  container.innerHTML = data.items.map(item => {
-    const videoId = item.id.videoId;
-    const thumb = item.snippet.thumbnails.medium.url;
-    const title = item.snippet.title;
+function showFailedToLoadVideosError(htmlMessage) {
+  const container = document.getElementById('latest-videos');
+  container.innerHTML = htmlMessage;
+}
 
-    return `
-      <a class="video-card" href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">
-        <img src="${thumb}" alt="${title}" loading="lazy">
-        <p>${title}</p>
-      </a>
-    `;
-  }).join('');
+function renderVideos(videos) {
+  const container = document.getElementById('latest-videos');
+  container.innerHTML = videos.map(video => `
+    <a class="video-card" href="${video.link}" target="_blank" rel="noopener" >
+      <img src="${video.thumbnail}" alt="${video.title}" loading="lazy">
+      <p>${video.title}</p>
+    </a>
+  `).join('');
 }
 
 function incrementClicks(amount) {
