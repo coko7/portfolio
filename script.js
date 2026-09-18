@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function loadLatestVideos() {
   try {
-    const response = await fetch('data/last-3-tty-videos.json');
+    const response = await fetch('data/last-3-tt-videos.json');
     if (!response.ok) {
       renderTTLoadErrorMessage('... Video file is somehow not fetchable ୧((#Φ益Φ#))୨ !!!!')
       throw new Error(`HTTP error: ${response.status}`);

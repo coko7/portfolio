@@ -9,7 +9,7 @@ FEED_URL="https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}"
 LIMIT=3
 
 XML_FEED_FILE='data/feed.xml'
-OUT_JSON_FILE='data/last-3-tty-videos.json'
+OUT_JSON_FILE='data/last-3-tt-videos.json'
 
 ### Script start
 
@@ -25,13 +25,15 @@ ENTRIES="[]"
 
 for i in $(seq 1 "$COUNT"); do
   TITLE=$(xmllint --xpath "string(${XML_ENTRY}[$i]/*[local-name()='title'])" $XML_FEED_FILE)
-  VIDEO=$(xmllint --xpath "string(${XML_ENTRY}[$i]/*[local-name()='videoId'])" $XML_FEED_FILE)
-  THUMB=$(xmllint --xpath "string(${XML_ENTRY}[$i]//*[local-name()='thumbnail']/@url)" $XML_FEED_FILE)
+  VIDEO_ID=$(xmllint --xpath "string(${XML_ENTRY}[$i]/*[local-name()='videoId'])" $XML_FEED_FILE)
+
+  LINK="https://www.youtube.com/watch?v=${VIDEO_ID}"
+  THUMB="https://i.ytimg.com/vi/${VIDEO_ID}/mqdefault.jpg"
 
   ENTRIES=$(jq \
     --arg title "$TITLE" \
-    --arg videoId "$VIDEO" \
-    --arg link "https://www.youtube.com/watch?v=${VIDEO}" \
+    --arg videoId "$VIDEO_ID" \
+    --arg link "$LINK" \
     --arg thumbnail "$THUMB" \
     '. + [{title: $title, videoId: $videoId, link: $link, thumbnail: $thumbnail}]' \
     <<<"$ENTRIES")
