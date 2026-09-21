@@ -1,5 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg"
 viewBox="-2751.716552734375 -2309.092041015625 5557.2041015625 4918.9189453125">
+  <style>
+    .node-shape {
+      stroke: transparent;
+      stroke-width: 24px;
+      cursor: pointer;
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .node-shape:hover {
+      transform: scale(2.5);
+      filter: brightness(1.4) drop-shadow(0 0 6px white);
+    }
+  </style>
   <g  />
   <g >
     <path class="link"

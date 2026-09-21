@@ -1,0 +1,9 @@
+[
+  { "emoji": "⌨️", "name": "coding", "frequency": "daily" },
+  { "emoji": "📖", "name": "reading", "frequency": "daily" },
+  { "emoji": "🏃", "name": "running", "frequency": "weekly" },
+  { "emoji": "✏️", "name": "drawing", "frequency": "weekly" },
+  { "emoji": "✍️", "name": "writing", "frequency": "weekly" },
+  { "emoji": "🇯🇵", "name": "anime", "frequency": "random" },
+  { "emoji": "🎮", "name": "gaming", "frequency": "random" }
+]

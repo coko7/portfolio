@@ -19,9 +19,22 @@
     <link rel="apple-touch-icon" href="./assets/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v16/font/simple-icons.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <noscript><style>.pre-json { display: none; }</style></noscript>
   </head>
 
   <body>
+    <noscript>
+      <div class="noscript-warning">
+        <p>🛑 No JavaScript (｡ᵕ °ㅁ° ).ᐟ.ᐟ.ᐟ 🛑</p><br/>
+        <p>It looks like you disabled JavaScript 👀 </p>
+        <p>Can't blame you, I am a <a href="https://noscript.net/">NoScript</a> enjoyer myself.</p><br/>
+        <p>Most of this site is consumable without JS.</p>
+        <p>But with JS on, the UX is a bit nicer.</p><br/>
+        <p>You do you</p>
+        <p>¯\_(ツ)_/¯</p>
+      </div>
+    </noscript>
     <header>
       <h1>read.me</h1>
       <h3><b>N</b>eovim <b>E</b>vangelist, <b>R</b>ewriting <b>D</b>otfiles</h3>
@@ -116,7 +129,7 @@
         </div>
         <p class="env-var" style="text-align: center;">✨ Checkout the latest episodes ✨</p>
         <div id="latest-videos"></div>
-        <p id="load-tt-videos-error"></p>
+        <p id="load-tt-videos-error"><noscript>This part should contain links to the last three episodes... <br/>But you chose to disable JavaScript, so... <br/><br/> (._. )</noscript></p>
         <p>You can watch more episodes on 
           <a class="btn-link" href="https://www.youtube.com/@TerminalCollectiveOrg">
             <i class="si si-youtube" style="font-weight: normal"></i> YouTube</a>.
@@ -204,8 +217,8 @@
       </article>
 
       <article id="homelab">
-        <h3 class="title large">ssh homelab@127.0.0.1 -p 22</h3>
-        <h3 class="title small">ssh homelab@127.0.0.1</h3>
+        <h3 class="title large">ssh homelab@127.0.0.1 -p 22 -i ~/.ssh/id_ed25519_hl</h3>
+        <h3 class="title small">ssh homelab@localhost</h3>
         <div class="homelab-cols cols">
           <div class="cols-text">
             <h4>Hardware</h4>
@@ -223,7 +236,7 @@
           <p>* <a href="https://status.lazyfreax.dev/status/main" class="btn-link">Uptime Kuma</a> for monitoring services</p>
           <p>* <a href="https://rp.lazyfreax.dev" class="btn-link">rustypaste</a>: self-hosted upload/pastebin service</p>
           <p>* Personal git forge: <a href="https://git.lazyfreax.dev" class="btn-link">Forgejo</a></p>
-          <p>* Private <a href="https://atuin.sh/" class="btn-link">atuin.sh</a> server to sync/backup shell history <i>(overkill?)</i></p>
+          <p>* Private <a href="https://atuin.sh/" class="btn-link">atuin.sh</a> server to sync/backup shell history</p>
           <p>* Self-hosted media server with <a href="https://github.com/FuzzyGrim/Yamtrack" class="btn-link">Yamtrack</a></p>
           <p>* Caddy/Nginx/Traefik as reverse proxies</p>
           <p>* <i>much more stuff actually... I will expand this section later</i></p>
@@ -231,26 +244,25 @@
       </article>
 
       <article id="hobbies">
-        <h3 class="title large">jq .coko.hobbies &lt; info.json</h3>
-        <h3 class="title small">jq . &lt; hobbies.json</h3>
-        <pre class="pre-json large"><code>[
-    { "name": <span class="hl-str">"⌨️ coding"</span>, <span>"frequency"</span>: <span class="hl-str">"daily"</span> },
-    { "name": <span class="hl-str">"📖 reading"</span>, <span>"frequency"</span>: <span class="hl-str">"daily"</span> },
-    { "name": <span class="hl-str">"🏃 running"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
-    { "name": <span class="hl-str">"✏️ drawing"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
-    { "name": <span class="hl-str">"✍️ writing"</span>, <span>"frequency"</span>: <span class="hl-str">"weekly"</span> },
-    { "name": <span class="hl-str">"🇯🇵 anime"</span>, <span>"frequency"</span>: <span class="hl-str">"random"</span> },
-    { "name": <span class="hl-str">"🎮 gaming"</span>, <span>"frequency"</span>: <span class="hl-str">"random"</span> }
-]</code></pre>
-        <pre class="pre-json small"><code>[
-    { "coding": <span class="hl-str">"daily"</span> },
-    { "reading": <span class="hl-str">"daily"</span> },
-    { "running": <span class="hl-str">"weekly"</span> },
-    { "drawing": <span class="hl-str">"weekly"</span> },
-    { "writing": <span class="hl-str">"weekly"</span> },
-    { "anime": <span class="hl-str">"random"</span> },
-    { "gaming": <span class="hl-str">"random"</span> }
-]</code></pre>
+        <div class="code-wrapper">
+          <h3 class="title large">jq .coko.hobbies &lt; info.json</h3>
+          <h3 class="title small">jq . &lt; hobbies.json</h3>
+
+          <pre class="pre-json large"><code class="language-json" id="hobbies-large"></code></pre>
+          <pre class="pre-json small"><code class="language-json" id="hobbies-small"></code></pre>
+          <noscript>
+            <p class="env-var">// Try with JavaScript on for a nerdier result ദ്ദി(⎚_⎚)</p><br/>
+            <ul class="hobbies-fallback">
+              <li>⌨️ coding (daily)</li>
+              <li>📖 reading (daily)</li>
+              <li>🏃 running (weekly)</li>
+              <li>✏️ drawing (weekly)</li>
+              <li>✍️ writing (weekly)</li>
+              <li>🇯🇵 anime (random)</li>
+              <li>🎮 gaming (random)</li>
+            </ul>
+          </noscript>
+        </div>
       </article>
 
       <article id="world-building">
@@ -270,7 +282,7 @@
       </article>
 
       <article id="some-good-books">
-        <h3 class="title large">nvim -o <span class="env-var">$(</span>echo some,good,books.md | sd 's|,|_|g'<span class="env-var">)</span></h3>
+        <h3 class="title large">nvim -o <span class="env-var">$(</span>echo some,good,books.md | sed 's|,|_|g'<span class="env-var">)</span></h3>
         <h3 class="title small">vi some_good_books.md</h3>
         <div class="books">
           <a href="https://www.goodreads.com/book/show/40121378-atomic-habits">
@@ -384,7 +396,11 @@
       <i class="si si-archlinux"></i>
     </button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script>Prism.manual = true;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <script src="script.js"></script>
+    <script src="load-hobbies.js"></script>
 
     <footer>
       <a class="bmac" href="https://www.buymeacoffee.com/coko7"
