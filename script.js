@@ -61,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  document.querySelectorAll('article[id] > h3').forEach(h3 => {
+  document.querySelectorAll('article[id] h3.title').forEach(h3 => {
     h3.addEventListener('click', () => {
-      const article = h3.parentElement;
+      const article = h3.closest('article[id]');
       history.pushState(null, '', `#${article.id}`);
       h3.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });

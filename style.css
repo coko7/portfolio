@@ -528,6 +528,6 @@ img#homelab-illustration {
   border: 2px solid var(--link-color);
 }
 
-article[id] > h3 {
+article[id] h3.title {
   scroll-margin-top: 30px;
 }
