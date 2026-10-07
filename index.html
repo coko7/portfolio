@@ -43,15 +43,13 @@
     <main>
       <div id="profile-picture">
         <img id="profile-img" src="./assets/coko_crkbd.png" alt="coko's avatar">
-      </div>
-
-      <div class="hovercraft">
-        <span class="hidden">0</span>
+        <button id="thin-feet-toggle" class="bmac" hidden>Terminal Nerd</button>
       </div>
 
       <article id="whoami" class="intro">
         <h3 class="title large">whoami | xargs -i cat intro_{}.txt</h3>
         <h3 class="title small">whoami</h3>
+        <h3 class="title thin-feet">Who am I?</h3>
         <p>I'm coko 👋</p><br/>
         <p>A french developer who’s passionate about programming and open-source.</p><br>
         <p>I spend most of my time in the terminal and rely on a variety of command-line tools to help me on my day job: <b>neovim, tmux, fzf, sed, rg, jq, git, curl, xh, ssh,</b> <i>and many more…</i></p><br/>
@@ -61,6 +59,7 @@
       <article id="tty-blog" class="blog">
         <h3 class="title large">zola serve --open</h3>
         <h3 class="title small">zola serve</h3>
+        <h3 class="title thin-feet">TTY Blog</h3>
         <p>Sometimes, I write stuff on my blog: <a class="btn-link" href="https://blog.lazyfreax.dev">The Terminal Yard (tty)</a></p><br>
         <p>Latest posts:</p>
         <p>* <a href="https://blog.lazyfreax.dev/blog/latuicon-icon-picker/" class="btn-link">latuicon: the TUI icon picker from late.sh</a></p>
@@ -79,6 +78,7 @@
       <article id="projects">
         <h3 class="title large">fd .git --type dir --hidden <span class="env-var">$HOME</span>/projects</h3>
         <h3 class="title small">find projects -type d</h3>
+        <h3 class="title thin-feet">Personal Projects</h3>
         <p>
           <a class="btn-link" href="https://github.com/coko7/latuicon">😴 latuicon/</a> TUI icon picker made with Ratatui
         </p>
@@ -102,7 +102,6 @@
         </p>
 
         <br/>
-
         <p>
           All my projects:
           <a class="btn-link" href="https://github.com/coko7">
@@ -114,6 +113,7 @@
       <article id="terminal-collective" class="termcol">
         <h3 class="title large">pw-record terminal-tuesday-<span class="env-var">$(</span>date +%y-%m-%d<span class="env-var">)</span>.wav</h3>
         <h3 class="title small">pw-record tt-<span class="env-var">$(</span>date +%V<span class="env-var">)</span>.wav</h3>
+        <h3 class="title thin-feet">Terminal Collective</h3>
 
         <div class="cols">
           <div>
@@ -137,10 +137,11 @@
         <p>Visit the <a class="btn-link" href="https://terminalcollective.org">Terminal Collective</a> website to learn more.</p>
       </article>
 
-
       <article id="rtfw-projects">
         <h3 class="title large">cargo build --rewrite-the-freaking-wheel</h3>
         <h3 class="title small">cargo build -rtfw</h3>
+        <h3 class="title thin-feet">Learning Projects</h3>
+
         <p>I like to try writing existing stuff from scratch.</p>
         <p>It's a great way to learn how things work.</p><br/>
         <p class="gradient-text">❌  DO NOT USE the following projects in production apps ( ͡° ͜ʖ ͡°)</p><br/>
@@ -169,6 +170,8 @@
       <article id="github-stats" class="github-stats-article">
         <h3 class="title large">gh --stats --user=<span class="env-var">$(</span>whoami<span class="env-var">)</span></h3>
         <h3 class="title small">gh --stats --user=<span class="env-var">$(</span>whoami<span class="env-var">)</span></h3>
+        <h3 class="title thin-feet">GitHub stats</h3>
+
         <p>I push my code to GitHub for simplicity. However, I also self-host my own instance of Forgejo:
           <a class="btn-link" href="https://git.lazyfreax.dev">
             <i class="si si-forgejo" style="font-weight: normal"></i> git.lazyfreax.dev
@@ -195,6 +198,8 @@
       <article id="dotfiles-and-config">
         <h3 class="title large">glow <span class="env-var">$(</span>locate '*env-config.md' | head -n 1<span class="env-var">)</span></h3>
         <h3 class="title small">glow env-config.md</h3>
+        <h3 class="title thin-feet">Dotfiles &amp; Config</h3>
+
         <div>
           <p><a class="btn-link" href="https://github.com/coko7/.dotfiles">🔧 .dotfiles/</a> All the .dotfiles that I use for my Linux config</p>
           <p><a class="btn-link" href="https://github.com/coko7/scripts">🛠️ scripts</a> My personal collection of shell scripts I rely on everyday</p>
@@ -219,6 +224,8 @@
       <article id="homelab">
         <h3 class="title large">ssh homelab@127.0.0.1 -p 22 -i ~/.ssh/id_ed25519_hl</h3>
         <h3 class="title small">ssh homelab@localhost</h3>
+        <h3 class="title thin-feet">Homelab</h3>
+
         <div class="homelab-cols cols">
           <div class="cols-text">
             <h4>Hardware</h4>
@@ -247,6 +254,7 @@
         <div class="code-wrapper">
           <h3 class="title large">jq .coko.hobbies &lt; info.json</h3>
           <h3 class="title small">jq . &lt; hobbies.json</h3>
+        <h3 class="title thin-feet">Hobbies</h3>
 
           <pre class="pre-json large"><code class="language-json" id="hobbies-large"></code></pre>
           <pre class="pre-json small"><code class="language-json" id="hobbies-small"></code></pre>
@@ -268,14 +276,31 @@
       <article id="world-building">
         <h3 class="title large">bat --style=plain --color=always world-building.md</h3>
         <h3 class="title small">bat -pf world-building.md</h3>
+        <h3 class="title thin-feet">World-building</h3>
+
         <p>I have always loved <b>drawing</b> <i>(on paper or w/ <a class="btn-link" href="https://www.gimp.org/">Gimp</a>)</i> and <b>writing</b>.</p>
         <p>Even before falling in love with programming, I was scribbling characters on my notebooks and writing manga.</p><br/>
         <p>For more than <b>10 years</b>, I have been building my own fantasy worlds and stories. And recently, I decided to put all of them in a wiki of <span class="env-var">Markdown</span> files, which I edit with <a class="btn-link" href="https://obsidian.md/">Obsidian</a>.</p><br/>
-        <p>The graph below is a recent snapshot of the entire wiki. The nodes represent <span style="color: #e05454">characters</span>, <span style="color: #aedd4f">species</span>, <span style="color: #d7b152">locations</span>, <span style="color: #52b1e0">organizations</span>, <i>etc.</i></p>
+        <p>The graph below is a recent snapshot of the entire wiki.</p>
         <div class="centered-picture">
           <object id="wbw-svg" type="image/svg+xml" data="assets/wb-wiki-graph.svg">
             Your browser doesn't support SVG
           </object>
+        </div>
+        <div class="wbw-legend-box">
+          <!-- <p style="text-align: center">Hover the captions to highlights the corresponding nodes!</p> -->
+          <ul class="wbw-legend-list">
+            <li class="wbw-legend" data-node-color="e05252" style="--legend-color: #e05252">characters</li>
+            <li class="wbw-legend" data-node-color="e0b152" style="--legend-color: #e0b152">locations</li>
+            <li class="wbw-legend" data-node-color="52e0b1" style="--legend-color: #52e0b1">concepts</li>
+            <li class="wbw-legend" data-node-color="52b1e0" style="--legend-color: #52b1e0">organizations</li>
+            <li class="wbw-legend" data-node-color="b1e052" style="--legend-color: #b1e052">species</li>
+            <li class="wbw-legend" data-node-color="ffffff" style="--legend-color: #ffffff">artifacts</li>
+            <li class="wbw-legend" data-node-color="5252e0" style="--legend-color: #5252e0">drafts</li>
+            <li class="wbw-legend" data-node-color="52e052" style="--legend-color: #52e052">timeline events</li>
+            <li class="wbw-legend" data-node-color="e052b1" style="--legend-color: #e052b1">entity types</li>
+            <li class="wbw-legend" data-node-color="b152e0" style="--legend-color: #b152e0">realms</li>
+          </ul>
         </div>
         <p>The wiki is private and I don't really plan on opening it anytime soon. <br/>I am just happy writing and drawing for myself ᕕ( ᐛ )ᕗ</p><br/>
         <p><i><b>BTW:</b> If you are into World Building and you like open source tools, you should checkout <a class="btn-link" href="https://github.com/mak-kirkland/chronicler">Chronicler</a>.</i></p>
@@ -284,6 +309,8 @@
       <article id="some-good-books">
         <h3 class="title large">nvim -o <span class="env-var">$(</span>echo some,good,books.md | sed 's|,|_|g'<span class="env-var">)</span></h3>
         <h3 class="title small">vi some_good_books.md</h3>
+        <h3 class="title thin-feet">Some Good Books</h3>
+
         <div class="books">
           <a href="https://www.goodreads.com/book/show/40121378-atomic-habits">
             <img alt="Atomic Habits by James Clear" src="./assets/books/atomic_habits.jpg"/>
@@ -316,6 +343,7 @@
       <article id="get-my-resume">
         <h3 class="title large">zathura resumes/*.pdf</h3>
         <h3 class="title small">zathura resumes/*.pdf</h3>
+        <h3 class="title thin-feet">Obtain my Resume</h3>
         <div style="text-align: center; margin-top: 1em">
           <a href="https://http.cat/status/501">
             <img class="http-cat" src="https://http.cat/501" alt="">
@@ -327,12 +355,12 @@
         <p>For now, you can email me at <a class="btn-link" href="mailto:contact@coko7.fr">contact@coko7.fr</a> to get a fresh copy.</p>
         <p>I only support <b>english</b> and <b>français</b>.</p><br/>
         <p>Surely this entire section wasn't just an excuse to make use of <a class="btn-link" href="https://http.cat">http.😼</a></p>
-
       </article>
 
       <article id="social">
         <h3 class="title large">rg social | awk print -F; '{<span class="env-var">$2</span>,<span class="env-var">$3</span>}'</h3>
         <h3 class="title small">grep social</h3>
+        <h3 class="title thin-feet">Social handles</h3>
 
         <p>
           <a class="btn-link" href="https://github.com/coko7">
@@ -399,6 +427,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script>Prism.manual = true;</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
     <script src="load-hobbies.js"></script>
 

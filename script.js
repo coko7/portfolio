@@ -1,12 +1,48 @@
-let counterDisplayed = false;
-let clickedMeCounter = 0;
+const SITE_COLORS = ["#08AA6E", "#57F7BC", "#ffa500"];
+const GRASS_COLORS = ["#3a7d2c", "#6abf4b", "#a8e063", "#d4f5a3"];
 
-let overCraftSpan;
-let profileImg;
-let introArticle;
+function burstConfetti(el, colors) {
+  if (typeof confetti !== "function") return;
+  const rect = el.getBoundingClientRect();
+  confetti({
+    particleCount: 80,
+    spread: 70,
+    startVelocity: 30,
+    origin: {
+      x: (rect.left + rect.width / 2) / window.innerWidth,
+      y: (rect.top + rect.height / 2) / window.innerHeight,
+    },
+    colors,
+    disableForReducedMotion: true,
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("hello there");
+
+  const thinFeetToggle = document.getElementById("thin-feet-toggle");
+
+  const setThinFeet = (on) => {
+    document.body.classList.toggle("thin-feet-mode", on);
+    thinFeetToggle.textContent = on ? "Grass Toucher" : "Terminal Nerd";
+  };
+
+  let thinFeet = false;
+  try {
+    thinFeet = localStorage.getItem("thinFeet") === "true";
+  } catch { }
+  setThinFeet(thinFeet);
+  thinFeetToggle.hidden = false;
+
+  thinFeetToggle.addEventListener("click", () => {
+    thinFeet = !thinFeet;
+    setThinFeet(thinFeet);
+
+    burstConfetti(thinFeetToggle, thinFeet ? GRASS_COLORS : SITE_COLORS);
+    try {
+      localStorage.setItem("thinFeet", String(thinFeet));
+    } catch { }
+  });
 
   const writtenYear = document.getElementById("the-year-written").textContent;
   const actualYear = new Date().getFullYear();
@@ -21,35 +57,28 @@ document.addEventListener("DOMContentLoaded", function () {
     iForgorDialog.showModal();
   }
 
-  overCraftSpan = document.querySelector(".hovercraft>span");
-  profileImg = document.getElementById("profile-img");
-  introArticle = document.querySelector("article.intro");
-
-  const articlesH3 = document.querySelectorAll(".title");
-  const copyrightSpan = document.getElementById("copyright-span");
-
-  profileImg.addEventListener("click", () => {
-    if (!counterDisplayed) {
-      counterDisplayed = true;
-      overCraftSpan.classList.toggle("hidden");
-      setInterval(() => {
-        incrementClicks(1);
-      }, 1000);
-    }
-    incrementClicks(1);
-  });
-
-  articlesH3.forEach((h3) => {
-    h3.addEventListener("click", () => {
-      incrementClicks(5);
-    });
-  });
-
-  copyrightSpan.addEventListener("click", () => {
-    incrementClicks(15);
-  });
-
   loadLatestVideos();
+
+  const wbwSvgObject = document.getElementById('wbw-svg');
+  if (wbwSvgObject) {
+    const legendSpans = document.querySelectorAll('.wbw-legend');
+
+    const setLegendHover = (color) => {
+      const svgRoot = wbwSvgObject.contentDocument?.documentElement;
+      if (!svgRoot) return;
+      if (color) {
+        svgRoot.setAttribute('data-legend-hover', color);
+      } else {
+        svgRoot.removeAttribute('data-legend-hover');
+      }
+    };
+
+    legendSpans.forEach((span) => {
+      const color = span.dataset.nodeColor;
+      span.addEventListener('mouseenter', () => setLegendHover(color));
+      span.addEventListener('mouseleave', () => setLegendHover(null));
+    });
+  }
 
   const backToTopBtn = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
@@ -57,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   backToTopBtn.addEventListener('click', () => {
+    burstConfetti(backToTopBtn, SITE_COLORS);
     history.pushState(null, '', window.location.pathname + window.location.search);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -103,22 +133,6 @@ function renderVideos(videos) {
       <p>${video.title}</p>
     </a>
   `).join('');
-}
-
-function incrementClicks(amount) {
-  if (!counterDisplayed) return;
-
-  clickedMeCounter += amount;
-
-  if (clickedMeCounter > 9000) {
-    overCraftSpan.textContent = `> It's Over 9000! <`;
-  } else {
-    overCraftSpan.textContent = `> ${clickedMeCounter} <`;
-  }
-
-  // let marginTop = parseInt(window.getComputedStyle(introArticle).marginTop, 10);
-  // marginTop += amount;
-  // introArticle.style.marginTop = marginTop + 'px';
 }
 
 function showDialog(text) {
