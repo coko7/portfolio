@@ -93,7 +93,7 @@ body {
   color: black;
 }
 
-#projects > p {
+#projects > .project {
   margin-bottom: 1rem;
 }
 
