@@ -163,6 +163,15 @@ a.btn-link:hover {
   border-style: solid;
 }
 
+.intro > q {
+    font-weight: bold;
+    font-style: italic;
+    color: orange;
+    margin: 1rem;
+    display: block;
+    text-align: center;
+}
+
 article {
   margin: 0 1rem 2rem 1rem;
   max-width: 100%;
